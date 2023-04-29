@@ -1,22 +1,17 @@
 #!/usr/bin/python3
-"""
-This module is composed by a function that adds two numbers
-"""
-def add_integer(var, bar=98):
-    """ Function that adds two integer and/or float numbers
-    Args:
-        var: first variable 
-        bar: second variable
-    Returns:
-        The summation of the two given numbers
-    Raises:
-        TypeError: If var or bar aren't integer and/or float numbers
-    """
+"""Defines an integer addition function."""
 
-    if not isinstance(var, int) and not isinstance(var, float):
-        raise TypeError("var must be an integer")
-    if not isinstance(bar, int) and not isinstance(bar, float):
-        raise TypeError("bar must be an integer")
-    var = int(var)
-    bar = int(bar)
-    return (var + bar)
+
+def add_integer(a, b=98):
+    """Return the integer addition of a and b.
+
+    Float arguments are typecasted to ints before addition is performed.
+
+    Raises:
+        TypeError: If either of a or b is a non-integer and non-float.
+    """
+    if ((not isinstance(a, int) and not isinstance(a, float))):
+        raise TypeError("a must be an integer")
+    if ((not isinstance(b, int) and not isinstance(b, float))):
+        raise TypeError("b must be an integer")
+    return (int(a) + int(b))
